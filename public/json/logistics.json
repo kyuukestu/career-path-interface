@@ -1,0 +1,195 @@
+{
+  "name": "Manager, Logistics & Marketing",
+  "requirements": [
+    {
+      "type": "Experience",
+      "value": "8+ years in logistics, supply chain, or marketing management"
+    },
+    {
+      "type": "Education",
+      "value": "Bachelor’s Degree in Business Administration, Logistics, or Marketing"
+    },
+    {
+      "type": "Certification",
+      "value": "APICS CPIM / CSCP or equivalent supply chain certification"
+    }
+  ],
+  "children": [
+    {
+      "name": "Snr. Terminals Operations Supervisor",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years supervising terminal or plant operations" },
+        { "type": "Certification", "value": "OSHA or Safety Management certification" },
+        {
+          "type": "Education",
+          "value": "Bachelor’s in Logistics, Industrial Engineering, or related field"
+        }
+      ],
+      "children": [
+        {
+          "name": "Terminal Supervisor MILR",
+          "requirements": [
+            { "type": "Experience", "value": "3+ years in terminal operations" },
+            { "type": "Skills", "value": "Knowledge of terminal safety and equipment procedures" }
+          ],
+          "children": [
+            {
+              "name": "MILR Technician",
+              "requirements": [
+                { "type": "Experience", "value": "1–2 years as plant/terminal technician" },
+                { "type": "Skills", "value": "Mechanical and electrical troubleshooting" }
+              ]
+            },
+            {
+              "name": "Assistant Terminal Supervisor - MILR",
+              "requirements": [
+                {
+                  "type": "Experience",
+                  "value": "2+ years in terminal or industrial plant operations"
+                }
+              ]
+            },
+            {
+              "name": "Maintenance Coordinator",
+              "requirements": [
+                {
+                  "type": "Experience",
+                  "value": "2–3 years in maintenance scheduling and planning"
+                },
+                {
+                  "type": "Skills",
+                  "value": "Familiarity with CMMS (Computerized Maintenance Management Systems)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Terminal Supervisor - KILR & NPW",
+          "requirements": [
+            { "type": "Experience", "value": "3+ years in terminal logistics" },
+            { "type": "Certification", "value": "Hazmat or equivalent handling certification" }
+          ],
+          "children": [
+            {
+              "name": "Assistant Terminal Supervisor - KILR",
+              "requirements": [
+                { "type": "Experience", "value": "2+ years in logistics/terminal operations" }
+              ]
+            },
+            {
+              "name": "KILR Technician",
+              "requirements": [
+                { "type": "Experience", "value": "1–2 years as logistics/plant technician" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Snr. Suprv. Marketing & Customer Service",
+      "requirements": [
+        {
+          "type": "Experience",
+          "value": "5+ years in marketing operations or customer service leadership"
+        },
+        { "type": "Education", "value": "Bachelor’s in Marketing, Business, or Communications" }
+      ],
+      "children": [
+        {
+          "name": "Customer Service Representative",
+          "requirements": [
+            { "type": "Experience", "value": "1+ years in customer service or sales support" },
+            { "type": "Skills", "value": "Strong communication and problem-solving skills" }
+          ]
+        },
+        {
+          "name": "Sales Order Clerk",
+          "requirements": [
+            {
+              "type": "Experience",
+              "value": "1–2 years handling sales orders or administrative tasks"
+            },
+            { "type": "Skills", "value": "Knowledge of ERP systems and order management" }
+          ]
+        },
+        {
+          "name": "Marketing Operations Supervisor",
+          "requirements": [
+            { "type": "Experience", "value": "3+ years in marketing operations" },
+            { "type": "Skills", "value": "Experience coordinating campaigns and logistics" }
+          ],
+          "children": [
+            {
+              "name": "Terminal Technician ",
+              "requirements": [
+                { "type": "Experience", "value": "1–2 years in plant or technical operations" }
+              ]
+            },
+            {
+              "name": "Terminal Technician - Asphalt",
+              "requirements": [
+                { "type": "Experience", "value": "1–2 years handling asphalt operations" }
+              ]
+            },
+            {
+              "name": "Terminal Technician - LPG",
+              "requirements": [
+                { "type": "Experience", "value": "1–2 years working with LPG facilities" },
+                { "type": "Certification", "value": "Hazardous Gas Handling certificate" }
+              ]
+            },
+            {
+              "name": "Marketing Operations Coordinator",
+              "requirements": [
+                { "type": "Experience", "value": "2+ years coordinating marketing or logistics" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Refinery Coordinator",
+      "requirements": [
+        { "type": "Experience", "value": "4+ years in refinery or plant coordination" },
+        { "type": "Skills", "value": "Knowledge of refinery operations and compliance standards" }
+      ]
+    },
+    {
+      "name": "Supply Optimization Advisor",
+      "requirements": [
+        { "type": "Experience", "value": "6+ years in supply chain or logistics optimization" },
+        { "type": "Skills", "value": "Strong data analysis and forecasting" }
+      ],
+      "children": [
+        {
+          "name": "Economic & Planning Coordinator",
+          "requirements": [
+            {
+              "type": "Experience",
+              "value": "3+ years in economic planning, forecasting, or logistics"
+            },
+            { "type": "Skills", "value": "Excel, data modeling, and planning tools" }
+          ]
+        },
+        {
+          "name": "Marine Operations Coordinator",
+          "requirements": [
+            { "type": "Experience", "value": "3–4 years in marine logistics or shipping" },
+            { "type": "Certification", "value": "STCW or marine operations certification" }
+          ],
+          "children": [
+            {
+              "name": "Marine Operations Assistant",
+              "requirements": [
+                { "type": "Experience", "value": "1–2 years assisting in marine logistics" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

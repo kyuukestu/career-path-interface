@@ -1,0 +1,24 @@
+{
+  "name": "Finance and Accounting",
+  "children": [
+    {
+      "name": "Accounting Clerk",
+      "children": [
+        {
+          "name": "Accounting Officer",
+          "children": [
+            {
+              "name": "Management Accountant",
+              "children": [
+                { "name": "Chief Accountant" },
+                { "name": "Financial Treasurer & Budget Planner" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    { "name": "Stocks & Sales Supervisor" },
+    { "name": "Chief Financial Officer" }
+  ]
+}

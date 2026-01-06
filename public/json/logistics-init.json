@@ -1,0 +1,20 @@
+{
+  "name": "Logistics and Marketing",
+  "children": [
+    { "name": "Supply Optimisation Advisor" },
+    { "name": "Economics and Planning Coordinator" },
+    { "name": "Sales Order Clerk" },
+    { "name": "Terminal Technician" },
+    { "name": "Terminal Technician - Asphalt" },
+    { "name": "Terminal Technician - LPG" },
+    { "name": "Assistant Load Rack Terminal Supervisor" },
+    { "name": "Industrial Loading Rack/Terminal Supervisor" },
+    { "name": "Customer Service Representative" },
+    { "name": "Senior Supervisor Marketing and Customer Service" },
+    { "name": "Marketing Operations Supervisor" },
+    { "name": "Marketing Operations Coordinator" },
+    { "name": "Logistics Senior Supervisor" },
+    { "name": "Marine Operations Coordinator" },
+    { "name": "Assistant Marine Operations Coordinator" }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "name": "Manager, Human Resource Development & Administration",
+  "requirements": [
+    { "type": "Experience", "value": "7+ years in Human Resources or Administration" },
+    { "type": "Certification", "value": "SHRM-CP or PHR certification" },
+    {
+      "type": "Education",
+      "value": "Bachelor’s Degree in Human Resource Management or Business Administration"
+    }
+  ],
+  "children": [
+    {
+      "name": "Employee Relation & Engagement Specialist",
+      "requirements": [
+        { "type": "Experience", "value": "3+ years in employee relations or HR support" },
+        { "type": "Education", "value": "Bachelor’s in HR, Psychology, or Business" }
+      ]
+    },
+    {
+      "name": "Occupational Health Nurse",
+      "requirements": [
+        { "type": "Experience", "value": "3+ years in occupational or clinical nursing" },
+        { "type": "Certification", "value": "Registered Nurse (RN) License" },
+        { "type": "Education", "value": "Bachelor’s Degree in Nursing" }
+      ],
+      "children": [
+        {
+          "name": "Assistant Occupational Health Nurse",
+          "requirements": [
+            { "type": "Experience", "value": "1+ year in healthcare or nursing support" },
+            { "type": "Education", "value": "Associate’s Degree or Diploma in Nursing" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HR Officer",
+      "requirements": [
+        { "type": "Experience", "value": "2+ years in HR generalist or HR assistant roles" },
+        { "type": "Education", "value": "Bachelor’s in HR or Business Administration" }
+      ],
+      "children": [
+        {
+          "name": "HR Assistant",
+          "requirements": [
+            { "type": "Experience", "value": "Entry-level HR or admin internship" },
+            { "type": "Education", "value": "Associate’s Degree in Business or HR" }
+          ]
+        },
+        {
+          "name": "Bearer",
+          "requirements": [
+            {
+              "type": "Experience",
+              "value": "Experience in clerical or messenger duties preferred"
+            },
+            { "type": "Education", "value": "High School Diploma" }
+          ]
+        },
+        {
+          "name": "Telephone Operator/Receptionist",
+          "requirements": [
+            { "type": "Experience", "value": "1+ year in receptionist or customer service" },
+            { "type": "Education", "value": "High School Diploma" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Personnel Officer",
+      "requirements": [
+        { "type": "Experience", "value": "3+ years in HR, payroll, or personnel administration" },
+        { "type": "Education", "value": "Bachelor’s in HR, Business, or Public Administration" }
+      ]
+    },
+    {
+      "name": "Training Coordinator",
+      "requirements": [
+        {
+          "type": "Experience",
+          "value": "3+ years in training, learning & development, or facilitation"
+        },
+        {
+          "type": "Education",
+          "value": "Bachelor’s in Education, HR, or Organizational Development"
+        }
+      ],
+      "children": [
+        {
+          "name": "Training Specialist",
+          "requirements": [
+            { "type": "Experience", "value": "1+ year in training delivery or HR development" },
+            { "type": "Education", "value": "Associate’s Degree or Training Certification" }
+          ]
+        }
+      ]
+    }
+  ]
+}

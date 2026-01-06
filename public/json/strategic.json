@@ -1,0 +1,193 @@
+{
+  "name": "Manager, Strategic Planning & Business Support",
+  "requirements": [
+    { "type": "Experience", "value": "10+ years in strategic planning or business management" },
+    {
+      "type": "Education",
+      "value": "Bachelor’s/Master’s in Business Administration, Management, or related field"
+    },
+    { "type": "Skills", "value": "Leadership, project management, and analytical skills" }
+  ],
+  "children": [
+    {
+      "name": "Projects Manager",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years managing engineering projects" },
+        { "type": "Skills", "value": "Project coordination, budgeting, and scheduling" }
+      ],
+      "children": [
+        {
+          "name": "Outsourced Engineering Services",
+          "requirements": [
+            {
+              "type": "Experience",
+              "value": "2+ years coordinating outsourced engineering services"
+            }
+          ]
+        },
+        {
+          "name": "Mechanical Project Engineering Coordinator",
+          "requirements": [
+            { "type": "Experience", "value": "3+ years in mechanical project coordination" },
+            { "type": "Skills", "value": "Mechanical design and project tracking" }
+          ],
+          "children": [
+            {
+              "name": "Mechanical Project Engineer",
+              "requirements": [
+                { "type": "Education", "value": "Bachelor’s in Mechanical Engineering" },
+                { "type": "Experience", "value": "1–3 years project experience" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Electrical Project Engineering Coordinator",
+          "requirements": [
+            { "type": "Experience", "value": "3+ years in electrical project coordination" },
+            { "type": "Skills", "value": "Electrical design and project tracking" }
+          ],
+          "children": [
+            {
+              "name": "Electrical Project Engineer",
+              "requirements": [
+                { "type": "Education", "value": "Bachelor’s in Electrical Engineering" },
+                { "type": "Experience", "value": "1–3 years project experience" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Civil Project Engineering Coordinator",
+          "requirements": [
+            { "type": "Experience", "value": "3+ years in civil project coordination" }
+          ],
+          "children": [
+            {
+              "name": "Civil Engineer",
+              "requirements": [{ "type": "Education", "value": "Bachelor’s in Civil Engineering" }]
+            },
+            {
+              "name": "Project Engineering Asst.",
+              "requirements": [{ "type": "Experience", "value": "0–2 years assisting projects" }]
+            }
+          ]
+        },
+        {
+          "name": "Senior Draughtsman",
+          "requirements": [{ "type": "Skills", "value": "CAD drafting and technical drawings" }]
+        },
+        {
+          "name": "Senior Mechanical Engineer-Tank Repair Project Lead",
+          "requirements": [
+            { "type": "Experience", "value": "5+ years leading mechanical projects" },
+            { "type": "Skills", "value": "Mechanical repair and supervision" }
+          ],
+          "children": [
+            {
+              "name": "Senior Mechanical Engineer - Vessel Repair Project Lead & Mechanical",
+              "requirements": [
+                { "type": "Experience", "value": "3+ years in vessel repair projects" }
+              ]
+            },
+            {
+              "name": "Construction Field Officer/Engineer",
+              "requirements": [{ "type": "Skills", "value": "Field engineering and coordination" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Programme Management Office & Special Projects Coordinator",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years managing special projects" },
+        { "type": "Skills", "value": "Project management and reporting" }
+      ],
+      "children": [
+        {
+          "name": "PMO Project Engineer",
+          "requirements": [{ "type": "Experience", "value": "2–4 years in project engineering" }]
+        },
+        {
+          "name": "Project Management Support Officer",
+          "requirements": [{ "type": "Skills", "value": "Scheduling and project documentation" }]
+        }
+      ]
+    },
+    {
+      "name": "Corporate Planning & Risk Management Coordinator",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years in planning or risk management" },
+        { "type": "Skills", "value": "Business analysis, risk assessment" }
+      ],
+      "children": [
+        {
+          "name": "Business Operations Analyst",
+          "requirements": [{ "type": "Skills", "value": "Data analysis and reporting" }]
+        },
+        {
+          "name": "Risk Management Analyst",
+          "requirements": [{ "type": "Skills", "value": "Risk evaluation and mitigation" }]
+        }
+      ]
+    },
+    {
+      "name": "Information Technology Services Unit Head",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years in IT management" },
+        { "type": "Skills", "value": "IT strategy, systems oversight, and leadership" }
+      ],
+      "children": [
+        {
+          "name": "RIM Officer",
+          "requirements": [{ "type": "Skills", "value": "Records and information management" }],
+          "children": [
+            {
+              "name": "Assistant Librarian",
+              "requirements": [{ "type": "Education", "value": "Bachelor’s in Library Science" }]
+            }
+          ]
+        },
+        {
+          "name": "IT Infrastructure Supervisor",
+          "requirements": [
+            { "type": "Experience", "value": "3+ years managing IT infrastructure" }
+          ],
+          "children": [
+            {
+              "name": "IT Systems Analyst (Infrastructure & System Admin)",
+              "requirements": [
+                { "type": "Skills", "value": "System administration and networking" }
+              ]
+            },
+            {
+              "name": "Systems Analyst",
+              "requirements": [
+                { "type": "Skills", "value": "IT systems analysis and troubleshooting" }
+              ]
+            },
+            {
+              "name": "IT Service Desk",
+              "requirements": [
+                { "type": "Skills", "value": "Helpdesk support and incident management" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Supervisor, IT Business Applications",
+          "requirements": [
+            { "type": "Experience", "value": "3+ years in business applications management" }
+          ],
+          "children": [
+            {
+              "name": "IT Systems Analyst (Applications Development)",
+              "requirements": [{ "type": "Skills", "value": "Application development and support" }]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

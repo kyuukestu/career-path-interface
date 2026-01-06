@@ -1,0 +1,165 @@
+{
+  "name": "Manager, Refinery Production",
+  "requirements": [
+    { "type": "Experience", "value": "10+ years in refinery operations or production management" },
+    { "type": "Education", "value": "Bachelor’s Degree in Chemical or Process Engineering" },
+    { "type": "Certification", "value": "Process Safety Management Certification" }
+  ],
+  "children": [
+    {
+      "name": "Senior Supervisor, Process Operations Training & Procedures",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years in process operations training" },
+        { "type": "Skills", "value": "Strong procedural documentation and instructional skills" }
+      ],
+      "children": [
+        {
+          "name": "Trainers & Procedures Writers",
+          "requirements": [
+            { "type": "Experience", "value": "2–3 years in training or technical writing" },
+            { "type": "Skills", "value": "Excellent writing, communication, and SOP creation" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Senior Supervisor, Process Operations",
+      "requirements": [
+        { "type": "Experience", "value": "7+ years in refinery operations supervision" },
+        { "type": "Skills", "value": "Team leadership and process optimization" }
+      ],
+      "children": [
+        {
+          "name": "Shift Supervisor",
+          "requirements": [
+            { "type": "Experience", "value": "3–5 years shift supervision in process operations" }
+          ],
+          "children": [
+            {
+              "name": "Process Technician",
+              "requirements": [
+                { "type": "Experience", "value": "1–3 years hands-on process operations" },
+                { "type": "Skills", "value": "Monitoring and controlling process units" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Day Supervisors/Special Projects",
+          "requirements": [
+            { "type": "Experience", "value": "3–5 years in operations or project work" }
+          ],
+          "children": [
+            {
+              "name": "Process Technician",
+              "requirements": [
+                { "type": "Experience", "value": "1–3 years hands-on process operations" },
+                { "type": "Skills", "value": "Process monitoring and reporting" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SS, Oil movement & Storage",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years in storage and oil logistics" },
+        { "type": "Skills", "value": "Tank farm operations, loading/unloading procedures" }
+      ],
+      "children": [
+        {
+          "name": "OM&S Supervisor",
+          "requirements": [
+            { "type": "Experience", "value": "3+ years supervising oil movement/storage teams" },
+            { "type": "Skills", "value": "Safety compliance, inventory tracking" }
+          ],
+          "children": [
+            {
+              "name": "Process/Day Technician",
+              "requirements": [
+                { "type": "Experience", "value": "1–2 years operational support" },
+                { "type": "Skills", "value": "Monitoring and control of storage systems" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Loss Control Unit - Coordinator",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years in loss control or safety management" },
+        { "type": "Skills", "value": "Incident investigation, process safety" }
+      ],
+      "children": [
+        {
+          "name": "Process Engineers Loss Control",
+          "requirements": [
+            { "type": "Education", "value": "Bachelor’s Degree in Chemical/Process Engineering" },
+            { "type": "Experience", "value": "3–5 years in process safety or loss control" }
+          ]
+        },
+        {
+          "name": "Loss Control Engineering Assistant",
+          "requirements": [
+            { "type": "Experience", "value": "1–2 years assisting safety/engineering tasks" },
+            { "type": "Skills", "value": "Data collection, reporting, and safety audits" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Process Controls/DCS Operations",
+      "requirements": [
+        { "type": "Experience", "value": "3+ years in DCS/PLC control systems" },
+        { "type": "Skills", "value": "Process automation, troubleshooting, and control logic" }
+      ],
+      "children": [
+        {
+          "name": "DCS Engineer",
+          "requirements": [
+            { "type": "Education", "value": "Bachelor’s Degree in Electrical/Process Engineering" },
+            { "type": "Experience", "value": "2–4 years in DCS engineering" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Senior Supervisor Process Engineering",
+      "requirements": [
+        { "type": "Experience", "value": "6+ years in process engineering" },
+        {
+          "type": "Skills",
+          "value": "Process design, energy optimization, and plant troubleshooting"
+        }
+      ],
+      "children": [
+        {
+          "name": "Senior Process Engineer",
+          "requirements": [
+            { "type": "Education", "value": "Bachelor’s in Chemical/Process Engineering" },
+            { "type": "Experience", "value": "4–6 years process engineering experience" }
+          ]
+        },
+        {
+          "name": "Process Engineers Contact & Process Design",
+          "requirements": [
+            { "type": "Education", "value": "Bachelor’s in Chemical/Process Engineering" },
+            { "type": "Experience", "value": "3–5 years in process design" }
+          ]
+        },
+        {
+          "name": "Energy Mgmnt. Unit - Coordinator",
+          "requirements": [
+            { "type": "Experience", "value": "3–5 years in energy management" },
+            {
+              "type": "Skills",
+              "value": "Energy audits, KPI tracking, and optimization strategies"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

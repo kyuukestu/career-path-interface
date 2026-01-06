@@ -1,0 +1,12 @@
+{
+  "name": "Human Resource Development",
+  "children": [
+    { "name": "Library and Records Assistant" },
+    { "name": "Records and Information Officer" },
+    { "name": "Training Coordinator" },
+    { "name": "Human Resource and Development Officer" },
+    { "name": "Administrative Assistant (OH Unit)" },
+    { "name": "Assistant Occupational Health Nurse" },
+    { "name": "Senior Occupational Health Nurse" }
+  ]
+}

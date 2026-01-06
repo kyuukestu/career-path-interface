@@ -1,0 +1,156 @@
+{
+  "name": "Chief Financial Officer",
+  "requirements": [
+    { "type": "Experience", "value": "7+ years in Finance" },
+    { "type": "Certification", "value": "Certified Financial Analyst (CFA)" },
+    { "type": "Education", "value": "Bachelor’s Degree in Finance" }
+  ],
+  "value": 1,
+  "children": [
+    {
+      "name": "Accounting Supervisor - General Books",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years in accounting or audit" },
+        { "type": "Certification", "value": "Certified Public Accountant (CPA)" },
+        { "type": "Education", "value": "Bachelor’s Degree in Accounting" }
+      ],
+      "value": 2,
+      "children": [
+        {
+          "name": "Accounts Receivable",
+          "requirements": [
+            { "type": "Experience", "value": "2+ years in AR or bookkeeping" },
+            { "type": "Education", "value": "Associate’s Degree in Business or Accounting" }
+          ]
+        },
+        {
+          "name": "Accounts Officer - Cashier",
+          "requirements": [
+            { "type": "Experience", "value": "1+ year handling cash transactions" },
+            { "type": "Education", "value": "High School Diploma or equivalent" }
+          ]
+        },
+        {
+          "name": "Accounts Payable Clerk - Foreign",
+          "requirements": [
+            { "type": "Experience", "value": "2+ years in AP with foreign vendors" },
+            { "type": "Education", "value": "Associate’s Degree in Finance or related field" }
+          ]
+        },
+        {
+          "name": "Accounts Payable Clerk - Local",
+          "requirements": [
+            { "type": "Experience", "value": "2+ years in AP" },
+            { "type": "Education", "value": "Associate’s Degree in Accounting" }
+          ]
+        },
+        {
+          "name": "Accounts Clerk",
+          "requirements": [
+            { "type": "Experience", "value": "Entry-level or internship in accounting" },
+            { "type": "Education", "value": "High School Diploma or equivalent" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stocks & Sales Supervisor",
+      "requirements": [
+        { "type": "Experience", "value": "4+ years in inventory or sales operations" },
+        { "type": "Education", "value": "Bachelor’s Degree in Business or Supply Chain" }
+      ],
+      "value": 3,
+      "children": [
+        {
+          "name": "Stock & Sales Supervisor",
+          "value": 8,
+          "requirements": [
+            { "type": "Experience", "value": "2+ years in stockroom or sales team lead" }
+          ]
+        },
+        {
+          "name": "Accounts Officer - Stats",
+          "value": 9,
+          "requirements": [
+            { "type": "Experience", "value": "1+ year in statistical or financial reporting" }
+          ]
+        },
+        {
+          "name": "Accounts Officer - Manual Billing",
+          "value": 10,
+          "requirements": [{ "type": "Experience", "value": "1+ year in invoicing and billing" }]
+        },
+        {
+          "name": "Accounts Officer - Stocks & Sales",
+          "value": 11,
+          "requirements": [{ "type": "Experience", "value": "1+ year in inventory accounting" }]
+        },
+        {
+          "name": "Accounts Officer - Computer Billing",
+          "value": 12,
+          "requirements": [
+            { "type": "Experience", "value": "1+ year in electronic billing systems" }
+          ]
+        },
+        {
+          "name": "Accounts Officer - STC Inv. Valuation",
+          "value": 13,
+          "requirements": [
+            { "type": "Experience", "value": "1+ year in investment or asset valuation" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chief Accountant",
+      "requirements": [
+        { "type": "Experience", "value": "6+ years in corporate accounting" },
+        { "type": "Certification", "value": "CPA or ACCA" },
+        { "type": "Education", "value": "Bachelor’s in Accounting or Finance" }
+      ],
+      "value": 4,
+      "children": [
+        {
+          "name": "Cost Accountant",
+          "value": 14,
+          "requirements": [{ "type": "Experience", "value": "3+ years in cost analysis" }]
+        }
+      ]
+    },
+    {
+      "name": "Financial Treasurer & Budget Planner",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years in treasury or budget planning" },
+        { "type": "Education", "value": "Bachelor’s in Economics or Finance" }
+      ],
+      "value": 5,
+      "children": [
+        {
+          "name": "Accounting Officer - Banking & Investment",
+          "value": 15,
+          "requirements": [
+            {
+              "type": "Experience",
+              "value": "2+ years in financial services or investment banking"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Payroll Administrator",
+      "requirements": [
+        { "type": "Experience", "value": "3+ years managing payroll systems" },
+        { "type": "Education", "value": "Bachelor’s in HR, Accounting, or related field" }
+      ],
+      "value": 6,
+      "children": [
+        {
+          "name": "Assistant Payroll Officer",
+          "value": 16,
+          "requirements": [{ "type": "Experience", "value": "1+ year in payroll or HR support" }]
+        }
+      ]
+    }
+  ]
+}

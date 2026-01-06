@@ -1,0 +1,14 @@
+{
+  "name": "Procurement",
+  "children": [
+    { "name": "Administrative Officer" },
+    { "name": "Procurement Assistant" },
+    { "name": "Purchasing Supervisor" },
+    { "name": "Public Procurement Officer" },
+    { "name": "Contracts Administrator" },
+    { "name": "Compliance Officer" },
+    { "name": "Contracts Administration Assistant" },
+    { "name": "Warehouse Clerk" },
+    { "name": "Warehouse Supervisor" }
+  ]
+}

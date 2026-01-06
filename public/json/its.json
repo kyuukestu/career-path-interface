@@ -1,0 +1,78 @@
+{
+  "name": "Information Technology Systems Unit (ITSU)",
+  "requirements": [
+    { "type": "Experience", "value": "7+ years in IT systems or infrastructure management" },
+    { "type": "Certification", "value": "ITIL or PMP certification" },
+    { "type": "Education", "value": "Bachelor’s Degree in Computer Science, IT, or related field" }
+  ],
+  "children": [
+    {
+      "name": "Information Technology Systems Analyst (Applications Development)",
+      "requirements": [
+        {
+          "type": "Experience",
+          "value": "2+ years in application development or software engineering"
+        },
+        { "type": "Skills", "value": "Proficiency in Java, .NET, or similar frameworks" },
+        { "type": "Education", "value": "Bachelor’s in Computer Science or Software Engineering" }
+      ]
+    },
+    {
+      "name": "Head of Information Technology Services Unit",
+      "requirements": [
+        { "type": "Experience", "value": "10+ years in IT leadership and management" },
+        { "type": "Certification", "value": "CISM, CISSP, or equivalent" },
+        {
+          "type": "Education",
+          "value": "Bachelor’s Degree in Computer Science, IT, or related; Master’s preferred"
+        }
+      ]
+    },
+    {
+      "name": "IT Business Application Supervisor",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years in business applications or ERP systems" },
+        { "type": "Skills", "value": "Experience with SAP, Oracle, or Microsoft Dynamics" },
+        { "type": "Education", "value": "Bachelor’s in IT, Business Systems, or related field" }
+      ]
+    },
+    {
+      "name": "IT Infrastructure Supervisor",
+      "requirements": [
+        { "type": "Experience", "value": "5+ years managing IT infrastructure and servers" },
+        { "type": "Certification", "value": "CompTIA Server+, VMware, or Microsoft Azure Admin" },
+        { "type": "Education", "value": "Bachelor’s in Information Technology or related field" }
+      ]
+    },
+    {
+      "name": "IT System Analyst (Service Desk)",
+      "requirements": [
+        {
+          "type": "Experience",
+          "value": "2+ years providing technical support or service desk functions"
+        },
+        { "type": "Certification", "value": "CompTIA A+ or ITIL Foundation" },
+        { "type": "Education", "value": "Associate’s or Bachelor’s in IT or related field" }
+      ]
+    },
+    {
+      "name": "IT System Analyst (Systems Administrator)",
+      "requirements": [
+        { "type": "Experience", "value": "3+ years administering Windows or Linux servers" },
+        {
+          "type": "Certification",
+          "value": "Microsoft Certified Systems Administrator (MCSA) or Red Hat Certified SysAdmin"
+        },
+        { "type": "Education", "value": "Bachelor’s in IT, Computer Science, or related field" }
+      ]
+    },
+    {
+      "name": "IT Systems Analyst (Network and Security)",
+      "requirements": [
+        { "type": "Experience", "value": "4+ years in network administration and security" },
+        { "type": "Certification", "value": "CCNA/CCNP or CompTIA Security+" },
+        { "type": "Education", "value": "Bachelor’s in Computer Science, IT, or Cybersecurity" }
+      ]
+    }
+  ]
+}

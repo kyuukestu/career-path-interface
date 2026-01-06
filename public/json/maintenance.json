@@ -1,0 +1,231 @@
+{
+  "name": "Manager, Reliability & Maintenance",
+  "requirements": [
+    { "type": "Experience", "value": "10+ years in plant reliability or maintenance leadership" },
+    {
+      "type": "Education",
+      "value": "Bachelor’s Degree in Mechanical, Electrical, or Industrial Engineering"
+    },
+    { "type": "Certification", "value": "Certified Maintenance & Reliability Professional (CMRP)" }
+  ],
+  "children": [
+    {
+      "name": "Snr. Sup General Services",
+      "requirements": [
+        { "type": "Experience", "value": "6+ years supervising engineering and facility services" },
+        { "type": "Skills", "value": "Strong vendor management and compliance knowledge" }
+      ],
+      "children": [
+        {
+          "name": "Engineering Services Coordinator",
+          "requirements": [
+            { "type": "Experience", "value": "3–5 years in engineering coordination or support" },
+            { "type": "Skills", "value": "Knowledge of plant utilities and service contracts" }
+          ]
+        },
+        {
+          "name": "Facilities Coordinator",
+          "requirements": [
+            { "type": "Experience", "value": "3+ years in facility maintenance or services" },
+            { "type": "Skills", "value": "Knowledge of building systems, HVAC, and safety codes" }
+          ]
+        },
+        {
+          "name": "Engineering Assistant",
+          "requirements": [
+            { "type": "Education", "value": "Associate Degree or Diploma in Engineering" },
+            { "type": "Experience", "value": "1–2 years in technical/engineering support" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Snr. Sup Maintenance Services",
+      "requirements": [
+        { "type": "Experience", "value": "6+ years in refinery or heavy industry maintenance" },
+        {
+          "type": "Skills",
+          "value": "Expertise in rotating equipment, preventive maintenance, CMMS"
+        }
+      ],
+      "children": [
+        {
+          "name": "Maintenance Mechanical Engineer",
+          "requirements": [
+            { "type": "Education", "value": "Bachelor’s in Mechanical Engineering" },
+            { "type": "Experience", "value": "3–5 years in mechanical maintenance" }
+          ]
+        },
+        {
+          "name": "Mechanical Supervisor",
+          "requirements": [
+            { "type": "Experience", "value": "4+ years in mechanical supervision" },
+            {
+              "type": "Skills",
+              "value": "Team leadership, troubleshooting, preventive maintenance"
+            }
+          ],
+          "children": [
+            {
+              "name": "Mechanical Technician",
+              "requirements": [
+                { "type": "Experience", "value": "2+ years as mechanical technician" },
+                { "type": "Skills", "value": "Hands-on equipment repair and alignment" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "I & E Supervisor",
+          "requirements": [
+            {
+              "type": "Experience",
+              "value": "4+ years supervising instrumentation & electrical teams"
+            },
+            {
+              "type": "Certification",
+              "value": "Electrical Technician License or ISA Certification"
+            }
+          ],
+          "children": [
+            {
+              "name": "I & E Technician",
+              "requirements": [
+                {
+                  "type": "Experience",
+                  "value": "2+ years in instrumentation and electrical maintenance"
+                },
+                { "type": "Skills", "value": "PLC, DCS, and calibration skills" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Snr. Sup T/Around & Planning",
+      "requirements": [
+        { "type": "Experience", "value": "7+ years in turnaround/shutdown planning and execution" },
+        { "type": "Skills", "value": "Primavera P6 or MS Project proficiency" }
+      ],
+      "children": [
+        {
+          "name": "Planning Supervisor",
+          "requirements": [
+            { "type": "Experience", "value": "5+ years in industrial planning" },
+            { "type": "Skills", "value": "Strong scheduling and resource allocation" }
+          ],
+          "children": [
+            {
+              "name": "Planner",
+              "requirements": [
+                { "type": "Experience", "value": "3+ years in maintenance/turnaround planning" },
+                { "type": "Skills", "value": "Job plan creation, materials management" }
+              ],
+              "children": [
+                {
+                  "name": "Planning Clerk",
+                  "requirements": [
+                    {
+                      "type": "Experience",
+                      "value": "1–2 years in administrative/clerical planning support"
+                    },
+                    { "type": "Skills", "value": "Data entry, SAP or CMMS familiarity" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Assistant Planner",
+              "requirements": [
+                { "type": "Experience", "value": "1–2 years supporting planning/scheduling teams" }
+              ]
+            },
+            {
+              "name": "Data Entry Clerk",
+              "requirements": [
+                { "type": "Experience", "value": "0–1 years in clerical roles" },
+                { "type": "Skills", "value": "Accuracy in data input, spreadsheet proficiency" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Senior Supervisor Reliability",
+      "requirements": [
+        { "type": "Experience", "value": "7+ years in reliability engineering or inspection" },
+        { "type": "Certification", "value": "API 510 / 570 or equivalent inspection certification" }
+      ],
+      "children": [
+        {
+          "name": "Snr. I&E Engineer",
+          "requirements": [
+            {
+              "type": "Education",
+              "value": "Bachelor’s in Electrical/Instrumentation Engineering"
+            },
+            { "type": "Experience", "value": "6+ years in instrumentation & reliability" }
+          ],
+          "children": [
+            {
+              "name": "I & E Engineer",
+              "requirements": [
+                {
+                  "type": "Experience",
+                  "value": "3–5 years in electrical or instrumentation reliability"
+                }
+              ],
+              "children": [
+                {
+                  "name": "Engineering Assistant",
+                  "requirements": [
+                    {
+                      "type": "Education",
+                      "value": "Diploma or Associate in Electrical/Instrumentation"
+                    },
+                    { "type": "Experience", "value": "1–2 years as assistant or trainee" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Refinery Inspect",
+          "requirements": [
+            { "type": "Experience", "value": "4+ years in refinery inspection" },
+            { "type": "Certification", "value": "API 510 / 570 Certification" }
+          ]
+        },
+        {
+          "name": "Reliability Engineer",
+          "requirements": [
+            { "type": "Education", "value": "Bachelor’s in Mechanical/Electrical Engineering" },
+            { "type": "Experience", "value": "4+ years in reliability-centered maintenance" }
+          ]
+        },
+        {
+          "name": "Mechanical Engineer",
+          "requirements": [
+            { "type": "Education", "value": "Bachelor’s in Mechanical Engineering" },
+            { "type": "Experience", "value": "3–5 years in mechanical engineering support" }
+          ],
+          "children": [
+            {
+              "name": "Engineering Assistant Utilities",
+              "requirements": [
+                {
+                  "type": "Education",
+                  "value": "Diploma/Associate in Mechanical or Utilities Engineering"
+                },
+                { "type": "Experience", "value": "1–2 years supporting utility/plant operations" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

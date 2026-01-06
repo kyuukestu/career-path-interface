@@ -1,0 +1,21 @@
+{
+  "name": "Refinery Production Department",
+  "children": [
+    { "name": "Manager Refinery Production" },
+    { "name": "Senior Supervisor Process Operations" },
+    { "name": "Senior Supervisor Process Engineering" },
+    { "name": "Senior Refinery Process Engineer" },
+    { "name": "Refinery Process Engineer" },
+    { "name": "Loss Control Coordinator" },
+    { "name": "Loss Control Process Engineer" },
+    { "name": "Loss Control Engineering Assistant" },
+    { "name": "DCS Coordinator" },
+    { "name": "DCS Engineer" },
+    { "name": "Energy Management Coordinator" },
+    { "name": "Energy Management Process Engineer" },
+    { "name": "OMS Supervisor" },
+    { "name": "Shift Supervisor" },
+    { "name": "Process Technician 6th Poster" },
+    { "name": "Process Technician (1-5)" }
+  ]
+}
