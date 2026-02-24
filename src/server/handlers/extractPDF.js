@@ -1,45 +1,57 @@
 import fs from 'fs'
 import path from 'path'
 import crypto from 'crypto'
-import { fileURLToPath } from 'url'
-
 import { PDFParse } from 'pdf-parse'
-
 import { processAndSaveJob } from './processAndSaveJob.js'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-// TODO: FilePath needs to be passed from the frontend
 export const extractPDF = async (fileName) => {
-  const ext = path.extname(fileName)
-  const name = path.basename(fileName, ext)
-  const safeTitle = name.replace(/[^a-z0-9]/gi, '_').toLowerCase()
+  const publicDir = path.join(process.cwd(), '../../public')
+  const uploadDir = path.join(publicDir, 'uploaded-job-descriptions')
+  const indexPath = path.join(publicDir, 'job-index.json')
 
-  const filePath = path.join(process.cwd(), '../../public/uploaded-job-descriptions', fileName)
+  const filePath = path.join(uploadDir, fileName)
   const dataBuffer = await fs.promises.readFile(filePath)
 
+  // 🔐 Generate hash
   const hash = crypto.createHash('sha256').update(dataBuffer).digest('hex')
-  const jsonDir = path.join(process.cwd(), '../../', 'public/JSON-job-descriptions')
 
-  const jsonPath = path.join(jsonDir, `${hash}-${safeTitle}.json`)
+  // 📚 Load existing index
+  let jobIndex = []
+  if (fs.existsSync(indexPath)) {
+    const content = await fs.promises.readFile(indexPath, 'utf-8')
+    jobIndex = JSON.parse(content)
+  }
 
-  // 🚨 Duplicate detected
-  if (fs.existsSync(jsonPath)) {
+  // 🚨 Duplicate check
+  const duplicate = jobIndex.find((job) => job.id === hash)
+
+  if (duplicate) {
     console.log('Duplicate PDF detected. Deleting uploaded file.')
-
-    await fs.promises.unlink(filePath) // delete duplicate PDF
+    await fs.promises.unlink(filePath)
     return { duplicate: true }
   }
 
-  // pass the buffer directly
+  // 📄 Parse PDF
   const parser = new PDFParse({ data: dataBuffer })
-  // const data = await pdf(dataBuffer)
-
-  // const rawText = data.text
   const result = await parser.getText()
-
   const rawText = result.text
 
-  return processAndSaveJob(filePath, fileName, rawText, hash)
+  // 🧠 Process and save job JSON
+  const jobData = await processAndSaveJob(filePath, fileName, rawText, hash)
+
+  // 📌 Append to index
+  const newIndexEntry = {
+    id: jobData.id,
+    title: jobData.title,
+    department: jobData.department,
+    publicJSONPath: jobData.publicJSONPath,
+    publicPDFPath: jobData.publicPDFPath,
+  }
+
+  jobIndex.push(newIndexEntry)
+
+  // 💾 Save updated index
+  await fs.promises.writeFile(indexPath, JSON.stringify(jobIndex, null, 2))
+
+  return { success: true }
 }

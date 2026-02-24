@@ -5,7 +5,7 @@
   "purpose": "Records payments to customers’ accounts and maintains accounts receivable records.",
   "relationships": "Reports to the Accounts Supervisor – General Books",
   "supervisory": "This job has no supervisory responsibilities.",
-  "knowledge": "",
+  "knowledge": "To perform this job successfully, an individual must be able to perform each essential duty\nsatisfactorily. The requirements listed below are representative of the knowledge, skills, and/or\nabilities required.",
   "key_responsibilities": [
     "These include the following but other duties may be assigned from time to time.",
     "1. Maintains all posting for receivables by recording the transactions on a daily basis and",
@@ -29,7 +29,14 @@
     "the company from time to time such as General Administration, Safety, Health and Loss",
     "Control."
   ],
-  "education": [],
+  "education": [
+    " High School education with passes at the GCE ‘A’ Level in Accounts and minimum of three",
+    "other CXC subjects including Mathematics",
+    " Certificate / Diploma in Accounts",
+    " One to three years related experience and/or training; or equivalent combination of education",
+    "and experience."
+  ],
   "performance": [],
+  "jsonPath": "/JSON-job-descriptions/finance___accounting/accounts_receivable_clerk___general_books.json",
   "pdfPath": "/uploaded-job-descriptions/finance___accounting/accounts_receivable_clerk___general_books.pdf"
 }

@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { json } from 'stream/consumers'
 import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -7,63 +8,37 @@ const __dirname = path.dirname(__filename)
 
 // Main function
 export const processAndSaveJob = async (filePath, fileName, rawText, hash) => {
+  const publicDir = path.join(process.cwd(), '../../public')
+
   rawText = rawText.replace(/Updated:.*$/gim, '')
   rawText = rawText.replace(/Reformatted:.*$/gim, '')
   const cleaned = removeRepeatedLines(cleanText(rawText))
   const structured = parseJob(cleaned)
 
-  const id = Date.now()
   const ext = path.extname(fileName)
   const name = path.basename(fileName, ext)
   const safeTitle = name.replace(/[^a-z0-9]/gi, '_').toLowerCase()
 
+  // TODO: Sanitize file names for better readability; removes excessive underscores
   const departmentFolder = (structured.department || '').replace(/[^a-z0-9]/gi, '_').toLowerCase()
-
+  const jsonDir = path.join(publicDir, `JSON-job-descriptions`, departmentFolder)
   // Ensure JSON directory exists
-  const jsonDir = path.join(
-    process.cwd(),
-    '../../',
-    `public/JSON-job-descriptions/${departmentFolder}`,
-  )
-
   await fs.promises.mkdir(jsonDir, { recursive: true })
 
-  // Full path to JSON file
-  const jsonPath = path.join(jsonDir, `${hash}-${safeTitle}.json`)
+  // NOTE: Public access paths
+  const jsonPublicPath = `/JSON-job-descriptions/${departmentFolder}/${safeTitle}.json`
+  const pdfPublicPath = `/uploaded-job-descriptions/${departmentFolder}/${path.basename(filePath)}`
 
-  // If JSON already exists → duplicate file
-  // if (fs.existsSync(jsonPath)) {
-  //   console.log('Duplicate file detected. Skipping save.')
-  //   return null
-  // }
-
-  // Path to the PDF for public access
-  const pdfPublicPath = path.join(
-    `/uploaded-job-descriptions/${departmentFolder}`,
-    path.basename(filePath),
-  )
-
-  const jobIndex = {
-    id,
-    title: `${hash}-${safeTitle}.json`,
-    path: pdfPublicPath,
-  }
-
-  const jobIndexDir = path.join(process.cwd(), '../../', 'public/job-index')
-  if (!fs.existsSync(jobIndexDir)) {
-    fs.mkdirSync(jobIndexDir, { recursive: true })
-  }
-
-  const jobIndexPath = path.join(jobIndexDir, `${hash}-${safeTitle}.json`)
-
-  await fs.promises.writeFile(jobIndexPath, JSON.stringify(jobIndex, null, 2))
-
-  // Build the job data
+  // Return Job-Index for ExtractPDF function
   const jobData = {
     id: hash,
     ...structured,
-    pdfPath: pdfPublicPath,
+    publicJSONPath: jsonPublicPath,
+    publicPDFPath: pdfPublicPath,
   }
+
+  // Full path to JSON file
+  const jsonPath = path.join(jsonDir, `${safeTitle}.json`)
 
   // Write JSON file
   await fs.promises.writeFile(jsonPath, JSON.stringify(jobData, null, 2))
@@ -84,17 +59,17 @@ function parseJob(text) {
   )
   const educationText = extractSection(
     text,
-    'Education/Experience' || 'Education / Experience',
+    ['Education/Experience', 'Education / Experience'],
     'Abilities',
   )
   const performanceText = extractSection(text, 'Performance Criteria', "Employee's Name")
 
   return {
-    title: extractSection(text, 'Position Title:' || 'Position', '\n'),
+    title: extractSection(text, ['Position Title:', 'Position'], '\n'),
     department: extractSection(text, 'Department:', '\n'),
     purpose: extractSection(
       text,
-      'Main Purpose of Job' || 'Main Purpose for Job',
+      ['Main Purpose of Job', 'Main Purpose for Job'],
       'Reporting Relationships',
     ),
     relationships: extractSection(text, 'Reporting Relationships', 'Supervisory Responsibilities'),
@@ -103,23 +78,37 @@ function parseJob(text) {
       'Supervisory Responsibilities',
       'KEY DUTIES AND RESPONSIBILITIES',
     ),
-    knowledge: extractSection(
-      text,
-      'KNOWLEDGE AND SKILLS REQUIRED',
-      'Education/Experience' || 'Education / Experience',
-    ),
+    knowledge: extractSection(text, 'KNOWLEDGE AND SKILLS REQUIRED', [
+      'Education/Experience',
+      'Education / Experience',
+    ]),
     key_responsibilities: extractBullets(responsibilitiesText),
     education: extractBullets(educationText),
     performance: extractBullets(performanceText),
   }
 }
 
-function extractSection(text, start, end) {
-  const regex = new RegExp(`${start}([\\s\\S]*?)${end}`, 'i')
-  const match = text.match(regex)
-  return match ? match[1].trim() : ''
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
+function extractSection(text, start, end) {
+  const starts = Array.isArray(start) ? start : [start]
+  const ends = Array.isArray(end) ? end : [end]
+
+  for (const s of starts) {
+    for (const e of ends) {
+      const regex = new RegExp(`${escapeRegex(s)}([\\s\\S]*?)${escapeRegex(e)}`, 'i')
+
+      const match = text.match(regex)
+      if (match) return match[1].trim()
+    }
+  }
+
+  return ''
+}
+
+// TODO Better splitting; new lines start with digit followed by '.'?
 function extractBullets(sectionText) {
   return sectionText
     .split('\n')
