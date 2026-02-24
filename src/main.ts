@@ -4,6 +4,7 @@ import PrimeVue from 'primevue/config'
 import Aura from '@primeuix/themes/aura'
 import App from './App.vue'
 import router from './router'
+import ToastService from 'primevue/toastservice'
 
 import ECharts from 'vue-echarts'
 import 'echarts/lib/chart/tree'
@@ -21,5 +22,6 @@ app.use(PrimeVue, {
     preset: Aura,
   },
 })
+app.use(ToastService)
 app.component('v-chart', ECharts)
 app.mount('#app')

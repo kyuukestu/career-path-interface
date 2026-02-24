@@ -3,9 +3,9 @@ import { defineStore } from 'pinia'
 export const useJobStore = defineStore('job', {
   state: () => ({
     selectedJob: null as null | {
-      name: string
-      value?: string
-      requirements?: { type: string; value: string }[]
+      title: string
+      purpose?: string
+      key_responsibilities?: string[]
     },
   }),
 

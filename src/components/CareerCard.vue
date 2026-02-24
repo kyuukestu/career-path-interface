@@ -15,20 +15,20 @@ watch(
 </script>
 <template>
   <Card v-if="jobStore.selectedJob">
-    <template #title>{{ jobStore.selectedJob.name }}</template>
+    <template #title>{{ jobStore.selectedJob.title }}</template>
     <template #content>
-      <div v-for="req in jobStore.selectedJob.requirements || []" :key="req.value" class="mb-2">
-        <!-- <pre>{{ store.userQualifications }}</pre> -->
-        <Message
-          :severity="
-            Array.isArray(store.userQualifications) && store.userQualifications.includes(req.value)
-              ? 'success'
-              : 'error'
-          "
+      <p>{{ jobStore.selectedJob.purpose }}</p>
+     <h4>Key Responsibilities</h4>
+
+      <ul v-if="jobStore.selectedJob.key_responsibilities?.length">
+        <li
+          v-for="(item, index) in jobStore.selectedJob.key_responsibilities"
+          :key="index"
         >
-          {{ req.type }}: {{ req.value }}
-        </Message>
-      </div>
+          {{ item }}
+        </li>
+      </ul>
+        
     </template>
   </Card>
 </template>

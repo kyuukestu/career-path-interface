@@ -15,13 +15,21 @@ use([CanvasRenderer, TreeChart, TooltipComponent, TitleComponent])
 // Props: path to JSON file
 const props = defineProps<{ jsonPath: string }>()
 
+const jobIndex = ref<{ title: string; jobFile: string }[]>([])
+
 const treeOptions = ref<any | null>(null)
 const jobStore = useJobStore()
 // const selectedNode = ref<any | null>(null)
 
 const visible = ref(false)
-function onNodeClick(params: any) {
-  jobStore.setSelectedJob(params.data)
+async function onNodeClick(params: any) {
+  if (!params.data.jobFile) return
+
+  const res = await `/JSON-job-descriptions/${params.data.department}/${params.data.jobFile}`
+  const jobData = await res.json()
+
+  jobStore.setSelectedJob(jobData)
+  // jobStore.setSelectedJob(params.data)
   visible.value = !visible.value
 }
 
@@ -37,9 +45,8 @@ async function loadTree(path: string) {
         trigger: 'item',
         triggerOn: 'mousemove',
         formatter: (params: any) => {
-          const name = params.data.name || ''
+          const name = params.data.title || ''
           const dept = params.data.department ? `<br/>${params.data.department}` : ''
-          const value = params.data.value ?? ''
           return `<strong>${name}</strong>${dept}`
         },
       },
@@ -132,7 +139,11 @@ watch(
   { immediate: true },
 )
 
-onMounted(() => loadTree(props.jsonPath))
+// onMounted(() => loadTree(props.jsonPath))
+onMounted(async () => {
+  const res = await fetch('/job-index.json')
+  jobIndex.value = await res.json()
+})
 </script>
 
 <template>

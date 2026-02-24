@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import promotionHierarchy from './promotion-hierarchy.vue'
-import SkillNetwork from './skill-network.vue'
+import promotionHierarchy from '../views/promotion-hierarchy.vue'
 import themeBtn from '@/components/themeBtn.vue'
 import { useQualificationStore } from '@/stores/qualificationStore'
 import Fuse from 'fuse.js'
@@ -49,7 +48,6 @@ const onCreateOption = (newValue: any) => {
     <!-- Chart Panel -->
     <main class="col-span-6 flex flex-col">
       <promotionHierarchy />
-      <!-- <SkillNetwork /> -->
     </main>
   </div>
 </template>

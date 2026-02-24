@@ -34,6 +34,16 @@ function treeToGraph(tree: any) {
   return { nodes, links }
 }
 
+function onChartClick(params: any) {
+  if (params.dataType === 'node') {
+    alert('You clicked on a node')
+  }
+
+  if (params.dataType === 'edge') {
+    alert('You clicked on an edge')
+  }
+}
+
 // Fetch and load tree data
 async function loadTree(path: string) {
   if (!path) return
@@ -65,7 +75,6 @@ async function loadTree(path: string) {
           animationDuration: 750,
           animationDurationUpdate: 750,
           roam: true,
-
           force: {
             repulsion: 200,
             edgeLength: [100, 200],
@@ -98,6 +107,10 @@ async function loadTree(path: string) {
               fontWeight: 'bold',
               color: '#ff4500',
             },
+            lineStyle: {
+              width: 7,
+              color: '#ff4500',
+            },
           },
         },
       ],
@@ -124,6 +137,7 @@ onMounted(() => loadTree(props.jsonPath))
       :option="treeOptions"
       autoresize
       style="height: 700px; width: 100%"
+      @click="onChartClick"
     />
     <p v-else class="text-gray-500 italic">Loading career path...</p>
   </div>
