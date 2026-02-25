@@ -37,6 +37,6 @@
     "and experience."
   ],
   "performance": [],
-  "jsonPath": "/JSON-job-descriptions/finance___accounting/accounts_receivable_clerk___general_books.json",
-  "pdfPath": "/uploaded-job-descriptions/finance___accounting/accounts_receivable_clerk___general_books.pdf"
+  "publicJSONPath": "/JSON-job-descriptions/finance___accounting/accounts_receivable_clerk___general_books.json",
+  "publicPDFPath": "/uploaded-job-descriptions/finance___accounting/accounts_receivable_clerk___general_books.pdf"
 }

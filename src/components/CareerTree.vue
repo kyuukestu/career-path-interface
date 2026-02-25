@@ -7,7 +7,6 @@ import { CanvasRenderer } from 'echarts/renderers'
 import { TreeChart } from 'echarts/charts'
 import { TooltipComponent, TitleComponent } from 'echarts/components'
 import CareerCard from './CareerCard.vue'
-import { useJobStore } from '@/stores/useJobStore'
 
 // Register ECharts modules
 use([CanvasRenderer, TreeChart, TooltipComponent, TitleComponent])
@@ -16,21 +15,18 @@ use([CanvasRenderer, TreeChart, TooltipComponent, TitleComponent])
 const props = defineProps<{ jsonPath: string }>()
 
 const jobIndex = ref<{ title: string; jobFile: string }[]>([])
-
 const treeOptions = ref<any | null>(null)
-const jobStore = useJobStore()
-// const selectedNode = ref<any | null>(null)
-
+const selectedTitle = ref<string | null>(null)
 const visible = ref(false)
+
+// Handle node click
 async function onNodeClick(params: any) {
-  if (!params.data.jobFile) return
+  console.log('Params:', params.data)
+  if (!params.data?.name) return
+  selectedTitle.value = params.data.name
+  console.log('Selected title:', selectedTitle.value)
 
-  const res = await `/JSON-job-descriptions/${params.data.department}/${params.data.jobFile}`
-  const jobData = await res.json()
-
-  jobStore.setSelectedJob(jobData)
-  // jobStore.setSelectedJob(params.data)
-  visible.value = !visible.value
+  visible.value = true
 }
 
 // Fetch and load tree data
@@ -44,11 +40,6 @@ async function loadTree(path: string) {
       tooltip: {
         trigger: 'item',
         triggerOn: 'mousemove',
-        formatter: (params: any) => {
-          const name = params.data.title || ''
-          const dept = params.data.department ? `<br/>${params.data.department}` : ''
-          return `<strong>${name}</strong>${dept}`
-        },
       },
       series: [
         {
@@ -56,21 +47,13 @@ async function loadTree(path: string) {
           data: [data],
           orient: 'RL', // left-to-right orientation
           symbolSize: 40,
-          nodeGap: 140, // space between sibling nodes
+          nodeGap: 140,
           initialTreeDepth: 2,
           expandAndCollapse: false,
           roam: true,
           animationDuration: 750,
           animationDurationUpdate: 750,
-
-          // Line styling
-          lineStyle: {
-            color: '#bbb',
-            width: 3,
-            curveness: 0.3,
-          },
-
-          // Internal nodes styling
+          lineStyle: { color: '#bbb', width: 3, curveness: 0.3 },
           label: {
             position: 'top',
             verticalAlign: 'middle',
@@ -82,14 +65,12 @@ async function loadTree(path: string) {
             lineHeight: 1.4,
             labelLayout: { hideOverlap: true },
           },
-
-          // Leaves styling
           leaves: {
             label: {
               position: 'right',
               verticalAlign: 'middle',
               align: 'left',
-              color: '#000', // distinct leaf color
+              color: '#000',
               fontSize: 14,
               fontWeight: '600',
               fontStyle: 'italic',
@@ -97,32 +78,6 @@ async function loadTree(path: string) {
               lineHeight: 1.3,
               labelLayout: { hideOverlap: true },
             },
-          },
-
-          // Levels for spacing and styling
-          levels: [
-            {
-              level: 1,
-              distance: 160,
-              label: { fontSize: 16, color: '#1a1a1a' },
-              itemStyle: { borderWidth: 1, borderColor: '#ccc' },
-            },
-            {
-              level: 2,
-              distance: 140,
-              label: { fontSize: 15, color: '#333' },
-              itemStyle: { borderWidth: 1, borderColor: '#bbb' },
-            },
-            {
-              level: 3,
-              distance: 120,
-              label: { fontSize: 14, color: '#555' },
-            },
-          ],
-
-          emphasis: {
-            focus: 'adjacency',
-            label: { fontWeight: 'bold', color: '#ff4500' },
           },
         },
       ],
@@ -139,7 +94,7 @@ watch(
   { immediate: true },
 )
 
-// onMounted(() => loadTree(props.jsonPath))
+// Load job index on mount
 onMounted(async () => {
   const res = await fetch('/job-index.json')
   jobIndex.value = await res.json()
@@ -153,12 +108,12 @@ onMounted(async () => {
       :option="treeOptions"
       autoresize
       style="height: 700px; width: 100%"
-      @click="onNodeClick"
+      @click="(params) => onNodeClick(params)"
     />
     <p v-else class="text-gray-500 italic">Loading career path...</p>
   </div>
   <Dialog v-model:visible="visible">
-    <CareerCard />
+    <CareerCard v-if="selectedTitle" :title="selectedTitle" />
   </Dialog>
 </template>
 

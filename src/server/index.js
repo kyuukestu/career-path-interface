@@ -30,7 +30,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Upload endpoint
-app.post('/api/upload', uploadPDF().array('demo[]', 10), (req, res) => {
+app.post('/api/upload', uploadPDF().array('demo[]', 10), async (req, res) => {
   try {
     if (!req.files || req.files.length === 0) {
       return res.status(400).json({
@@ -55,7 +55,7 @@ app.post('/api/upload', uploadPDF().array('demo[]', 10), (req, res) => {
       // const name = path.basename(uploadedFiles[i], ext) // 'My PDF File!'
 
       // const safeName = name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ext.toLowerCase()
-      extractPDF(uploadedFiles[i].filename)
+      await extractPDF(uploadedFiles[i].filename)
       // console.log(uploadedFiles[i].path)
     }
 

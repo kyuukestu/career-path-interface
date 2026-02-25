@@ -44,7 +44,13 @@ export const processAndSaveJob = async (filePath, fileName, rawText, hash) => {
   await fs.promises.writeFile(jsonPath, JSON.stringify(jobData, null, 2))
   console.log(`${jobData.title || safeTitle} saved to: ${jsonPath}`)
 
-  return jobData
+  return {
+  id: hash,
+  title: structured.title,
+  department: structured.department,
+  publicJSONPath: jsonPublicPath,
+  publicPDFPath: pdfPublicPath,
+}
 }
 
 // -------------------

@@ -1,0 +1,39 @@
+{
+  "id": "511398e8e7ca3498f98db409990da1fdd388d6971224f8a9fa1b3a234759495a",
+  "title": "Accounts Clerk I – Stocks & Sales (Manual Billing)",
+  "department": "Finance & Accounting",
+  "purpose": "Computes, classifies, records, and verifies numerical data for use in maintaining accounting\nrecords by performing the following duties.",
+  "relationships": "Reports to Accounting Supervisor – Stocks & Sales",
+  "supervisory": "This job has no supervisory responsibilities.",
+  "knowledge": "To perform this job successfully, an individual must be able to perform each essential duty\nsatisfactorily. The requirements listed below are representative of the knowledge, skills, and/or\nabilities required.",
+  "key_responsibilities": [
+    "These include the following but other duties may be assigned from time to time.",
+    "1. Prepares sales invoices for weekly billings based on weekly sales summary by recording",
+    "the following information and checking for accuracy: product volume prices at the current",
+    "price list; excise duty and accounting codes in accordance with the Chart of Accounts.",
+    "2. Prepares transmittal list for distribution of sales invoices with relevant backup information",
+    "on billing to all customers.",
+    "3. Reconciles weekly sales summary for all the products delivered from the Refinery and",
+    "Loading Rack to ensure that all the units are correctly recorded.",
+    "4. Prepares collections listing to provide General Books with information for collection from",
+    "customers.",
+    "5. Prepares Sales Invoices for all manual-billing customers.",
+    "6. Prepares all Journal Vouchers required for month-end closing",
+    "7. Manually prepares Montego Bay sales on a Sales Summary from which Montego Bay",
+    "Loading Rack sales quantities are invoiced.",
+    "8. Transfers data from Legacy Sales Systems to SAP’s Sales System.",
+    "9. Reconciles Legacy Sales account with SAP Sales account.",
+    "10. Generally complies with all rules and regulations or guidelines of various policies issued by",
+    "the company from time to time such as General Administration, Safety, Health and Loss",
+    "Control."
+  ],
+  "education": [
+    " High school education with CXC or GCE ‘A’ Levels, including English Language,",
+    "Mathematics or Principles of Accounts; or Certificate/Diploma in Accounts.",
+    " Two (2) years related experience and/or training; or equivalent combination of education and",
+    "experience."
+  ],
+  "performance": [],
+  "publicJSONPath": "/JSON-job-descriptions/finance___accounting/accounts_clerk___manual_billing_.json",
+  "publicPDFPath": "/uploaded-job-descriptions/finance___accounting/accounts_clerk___manual_billing_.pdf"
+}
