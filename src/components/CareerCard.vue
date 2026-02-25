@@ -9,6 +9,7 @@ const props = defineProps<{
 const jobData = ref<any>(null)
 const jobIndex = ref<any[]>([])
 const loading = ref(false)
+const publicPDFPath = ref<string | null>(null)
 
 // Load job index once
 onMounted(async () => {
@@ -29,15 +30,14 @@ async function loadJob(title: string) {
   const match = jobIndex.value.find((job) => job.title === title)
 
   if (!match) {
-    console.log('No match found for title:', title)
     jobData.value = null
+    publicPDFPath.value = null
     return
   }
 
-  console.log('Loading JSON from:', match.publicJSONPath)
-
   loading.value = true
   jobData.value = null
+  publicPDFPath.value = match.publicPDFPath || null
 
   try {
     const res = await fetch(match.publicJSONPath)
@@ -58,6 +58,12 @@ watch(
   },
   { immediate: true },
 )
+
+function openPDF() {
+  if (publicPDFPath.value) {
+    window.open(publicPDFPath.value, '_blank')
+  }
+}
 </script>
 
 <template>
@@ -94,6 +100,11 @@ watch(
             {{ item }}
           </li>
         </ul>
+
+        <!-- PDF Button -->
+        <div v-if="publicPDFPath" style="margin-top: 1rem">
+          <button @click="openPDF">View Full Job Description (PDF)</button>
+        </div>
       </div>
 
       <div v-else>No data found.</div>

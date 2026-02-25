@@ -27,7 +27,8 @@ export const processAndSaveJob = async (filePath, fileName, rawText, hash) => {
 
   // NOTE: Public access paths
   const jsonPublicPath = `/JSON-job-descriptions/${departmentFolder}/${safeTitle}.json`
-  const pdfPublicPath = `/uploaded-job-descriptions/${departmentFolder}/${path.basename(filePath)}`
+  // TODO: Organize this by department; need to update the upload location as well.
+  const pdfPublicPath = `/uploaded-job-descriptions/${safeTitle}.pdf`
 
   // Return Job-Index for ExtractPDF function
   const jobData = {
@@ -45,12 +46,12 @@ export const processAndSaveJob = async (filePath, fileName, rawText, hash) => {
   console.log(`${jobData.title || safeTitle} saved to: ${jsonPath}`)
 
   return {
-  id: hash,
-  title: structured.title,
-  department: structured.department,
-  publicJSONPath: jsonPublicPath,
-  publicPDFPath: pdfPublicPath,
-}
+    id: hash,
+    title: structured.title,
+    department: structured.department,
+    publicJSONPath: jsonPublicPath,
+    publicPDFPath: pdfPublicPath,
+  }
 }
 
 // -------------------
