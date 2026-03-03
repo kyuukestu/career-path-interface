@@ -74,6 +74,10 @@ app.post('/api/upload', uploadPDF().array('demo[]', 10), async (req, res) => {
   }
 })
 
+app.post('/api/add', async (req, res) => {
+  console.log('Add item API')
+})
+
 // Error handling middleware for multer errors
 app.use((error, req, res, next) => {
   if (error instanceof multer.MulterError) {
@@ -105,59 +109,6 @@ app.use((error, req, res, next) => {
   next()
 })
 
-// Serve static files from public/uploads
-app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads/job-descriptions')))
-
-// Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.json({
-    status: 'ok',
-    message: 'Server is running',
-    uploadPath: path.join(__dirname, 'public', 'uploads'),
-  })
-})
-
-// List uploaded files endpoint (optional - for debugging)
-app.get('/api/files', (req, res) => {
-  const uploadPath = path.join(__dirname, 'public', 'uploads/job-descriptions')
-
-  if (!fs.existsSync(uploadPath)) {
-    return res.json({ files: [] })
-  }
-
-  fs.readdir(uploadPath, (err, files) => {
-    if (err) {
-      return res.status(500).json({ error: 'Failed to read upload directory' })
-    }
-
-    const fileList = files.map((filename) => {
-      const filePath = path.join(uploadPath, filename)
-      const stats = fs.statSync(filePath)
-
-      return {
-        filename,
-        size: stats.size,
-        uploadedAt: stats.mtime,
-        url: `/uploads/${filename}`,
-      }
-    })
-
-    res.json({ files: fileList, count: fileList.length })
-  })
-})
-
-// Get specific file endpoint
-app.get('/api/file/:filename', (req, res) => {
-  const filename = req.params.filename
-  const filePath = path.join(__dirname, 'public', 'uploads', filename)
-
-  if (!fs.existsSync(filePath)) {
-    return res.status(404).json({ error: 'File not found' })
-  }
-
-  res.sendFile(filePath)
-})
-
 // Start server
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
@@ -166,13 +117,5 @@ app.listen(PORT, () => {
   🚀 Server is running on port ${PORT}
   ====================================
 
-  API Endpoints:
-  - POST   http://localhost:${PORT}/api/upload
-  - GET    http://localhost:${PORT}/api/health
-  - GET    http://localhost:${PORT}/api/files
-
-  Upload Directory: ${path.join(__dirname, 'public', 'uploads/job-descriptions')}
-
-  ====================================
   `)
 })

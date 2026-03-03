@@ -31,6 +31,11 @@ const router = createRouter({
               name: 'Edit',
               component: () => import('@/views/JobDescriptions/EditDescription.vue'),
             },
+            {
+              path: '/list',
+              name: 'List',
+              component: () => import('@/views/JobDescriptions/ListJob.vue'),
+            },
           ],
         },
       ],

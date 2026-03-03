@@ -27,9 +27,14 @@ export const uploadPDF = () => {
       const name = path.basename(file.originalname, ext)
       const safeName =
         name
-          .replace(/[^a-z0-9]/gi, '_')
           .toLowerCase()
-          .trim() + ext.toLowerCase()
+          .trim()
+          .replace(/\s+/g, '_') // spaces -> underscores
+          .replace(/&/g, 'and')
+          .replace(/_{3,}/g, '_-_') // 3+ underscores -> _-_
+          .replace(/_+/g, '_') // collapse multiple underscores
+          .replace(/^_+|_+$/g, '') + // trim leading/trailing underscores
+        ext.toLowerCase()
 
       // const filename = file.originalname
 

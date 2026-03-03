@@ -19,7 +19,7 @@ const formData = reactive({
 })
 
 // Save form
-const saveForm = () => {
+const saveForm = async () => {
   // Validate required fields
   if (!formData.positionTitle || !formData.department) {
     toast.add({
@@ -49,8 +49,7 @@ const saveForm = () => {
     life: 3000,
   })
 
-  // Here you would typically send the data to your backend
-  // await saveToBackend(cleanedData)
+  //TODO send data to backend
 }
 
 // Clear form
@@ -73,25 +72,6 @@ const clearForm = () => {
     severity: 'info',
     summary: 'Form Cleared',
     detail: 'All fields have been reset',
-    life: 3000,
-  })
-}
-
-// Export as JSON
-const exportForm = () => {
-  const dataStr = JSON.stringify(formData, null, 2)
-  const blob = new Blob([dataStr], { type: 'application/json' })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = `job-description-${Date.now()}.json`
-  a.click()
-  URL.revokeObjectURL(url)
-
-  toast.add({
-    severity: 'success',
-    summary: 'Exported',
-    detail: 'Job Description exported successfully',
     life: 3000,
   })
 }
@@ -167,14 +147,6 @@ const exportForm = () => {
               editor-style="height: 120px"
               class="w-full mb-2"
             />
-            <Button
-              icon="pi pi-trash"
-              severity="danger"
-              text
-              rounded
-              @click="removeItem('duties', index)"
-              :disabled="formData.duties.length === 1"
-            />
           </div>
         </div>
       </div>
@@ -215,15 +187,6 @@ const exportForm = () => {
               class="w-full mb-2"
               editor-style="height: 300px"
             />
-
-            <Button
-              icon="pi pi-trash"
-              severity="danger"
-              text
-              rounded
-              @click="removeItem('competencies', index)"
-              :disabled="formData.competencies.length === 1"
-            />
           </div>
         </div>
       </div>
@@ -251,14 +214,6 @@ const exportForm = () => {
               editor-style="height: 120px"
               class="w-full mb-2"
             />
-            <Button
-              icon="pi pi-trash"
-              severity="danger"
-              text
-              rounded
-              @click="removeItem('performanceCriteria', index)"
-              :disabled="formData.performanceCriteria.length === 1"
-            />
           </div>
         </div>
       </div>
@@ -272,13 +227,7 @@ const exportForm = () => {
           outlined
           @click="clearForm"
         />
-        <Button
-          label="Export JSON"
-          icon="pi pi-download"
-          severity="info"
-          outlined
-          @click="exportForm"
-        />
+
         <Button label="Save Job Description" icon="pi pi-save" size="large" @click="saveForm" />
       </div>
     </div>

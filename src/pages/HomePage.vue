@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import promotionHierarchy from '../views/promotion-hierarchy.vue'
-import themeBtn from '@/components/themeBtn.vue'
 import { useQualificationStore } from '@/stores/qualificationStore'
 import Fuse from 'fuse.js'
 import { ref } from 'vue'
@@ -29,7 +28,7 @@ const onCreateOption = (newValue: any) => {
 }
 </script>
 <template>
-  <MultiSelect
+  <!-- <MultiSelect
     v-model="useQualificationStore().userQualifications"
     :options="qualificationOptions"
     :filter="true"
@@ -40,11 +39,11 @@ const onCreateOption = (newValue: any) => {
     class="w-full md:w-56"
     placeholder="Select Qualifications..."
     @create-option="onCreateOption"
-  ></MultiSelect>
+  ></MultiSelect> -->
   <div class="grid grid-cols-12 gap-4 h-screen">
     <!-- Input Panel -->
-    <h2 class="font-bold mb-2">Current Role</h2>
-
+    <!-- <h2 class="font-bold mb-2">Current Role</h2> -->
+    <h2 class="font-bold mb-2">Organization Chart/Hierarchy</h2>
     <!-- Chart Panel -->
     <main class="col-span-6 flex flex-col">
       <promotionHierarchy />

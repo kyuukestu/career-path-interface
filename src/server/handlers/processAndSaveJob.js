@@ -17,10 +17,30 @@ export const processAndSaveJob = async (filePath, fileName, rawText, hash) => {
 
   const ext = path.extname(fileName)
   const name = path.basename(fileName, ext)
-  const safeTitle = name.replace(/[^a-z0-9]/gi, '_').toLowerCase()
+
+  console.log([...name])
+
+  const safeTitle = name
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '_') // spaces -> underscores
+    .replace(/&/g, 'and')
+    .replace(/_{3,}/g, '_-_') // 3+ underscores -> _-_
+    .replace(/_+/g, '_') // collapse multiple underscores
+    .replace(/^_+|_+$/g, '') // trim leading/trailing underscores
+
+  console.log([...structured.department])
 
   // TODO: Sanitize file names for better readability; removes excessive underscores
-  const departmentFolder = (structured.department || '').replace(/[^a-z0-9]/gi, '_').toLowerCase()
+  const departmentFolder = (structured.department || 'general')
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '_') // spaces -> underscores
+    .replace(/&/g, 'and')
+    .replace(/_{3,}/g, '_-_') // 3+ underscores -> _-_
+    .replace(/_+/g, '_') // collapse multiple underscores
+    .replace(/^_+|_+$/g, '') // trim leading/trailing underscores
+
   const jsonDir = path.join(publicDir, `JSON-job-descriptions`, departmentFolder)
   // Ensure JSON directory exists
   await fs.promises.mkdir(jsonDir, { recursive: true })

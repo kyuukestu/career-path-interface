@@ -22,7 +22,7 @@ const items = ref([
   {
     label: 'Manage',
     icon: 'pi pi-fw pi-file',
-    badge: 3,
+    badge: 4,
     items: [
       {
         label: 'Add',
@@ -59,6 +59,19 @@ const items = ref([
             severity: 'info',
             summary: 'Edit',
             detail: 'Edit Job Description form.',
+            life: 3000,
+          })
+        },
+      },
+      {
+        label: 'List',
+        icon: '',
+        command: () => {
+          router.push('/list')
+          toast.add({
+            severity: 'info',
+            summary: 'List',
+            detail: 'List Job Descriptions.',
             life: 3000,
           })
         },
